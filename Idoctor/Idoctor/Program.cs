@@ -18,8 +18,8 @@ namespace Idoctor
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            //InteractionObjects a = new InteractionObjects(new Point(50, 50), 1001, 1001);
-            //bool mm = a.IsIntersection(new Point(5, 5), 300, 300);
+            InteractionObjects a = new InteractionObjects(new Point(50, 50), 50, 300);
+            bool mm = a.IsLocated(new Point(5, 5), 300, 300);
 
             GameView view = new GameView();
             GameModel model = new GameModel();

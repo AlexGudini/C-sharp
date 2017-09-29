@@ -19,7 +19,7 @@ namespace Idoctor
     {
         private GameView view;
         private GameModel model;
-
+        private TaskController taskController;
         public GameController(GameView view, GameModel model)
         {
             this.view = view;
@@ -27,23 +27,64 @@ namespace Idoctor
             this.view.SetGameConroller(this);
             this.view.DrawCharacter();
 
-            
+            Idoctor.Tasks.TaskView taskView = new Tasks.TaskView();
+           // this.taskController = new TaskController(taskView, new TaskModel());
         }
 
         public void TimerMoving()
         {
-            bool a = this.view.GetKeyPress().IsDownUp;
             if (this.view.GetKeyPress().IsDownUp == true)
-                this.model.GetPlayer().LocateY -= 5;
+            {
+                InteractionObjects helperWithInteration = new InteractionObjects(view.Location, view.Width, view.Height);
+                Point pointSubject = new Point(model.GetPlayer().LocateX + view.Location.X, model.GetPlayer().LocateY + view.Location.Y - 5);
+                int widthSubject = model.GetPlayer().GetImagePlayer().Width;
+                int heightSubject = model.GetPlayer().GetImagePlayer().Height;
+                if (helperWithInteration.IsLocated(pointSubject, widthSubject, heightSubject) == true)
+                    this.model.GetPlayer().LocateY -= 5;
+            }
+                
             if (this.view.GetKeyPress().IsDownRight == true)
-                this.model.GetPlayer().LocateX += 5;
-
+            {
+                InteractionObjects helperWithInteration = new InteractionObjects(view.Location, view.Width, view.Height);
+                Point pointSubject = new Point(model.GetPlayer().LocateX + view.Location.X + 5, model.GetPlayer().LocateY + view.Location.Y);
+                int widthSubject = model.GetPlayer().GetImagePlayer().Width;
+                int heightSubject = model.GetPlayer().GetImagePlayer().Height;
+                if (helperWithInteration.IsLocated(pointSubject, widthSubject, heightSubject) == true)
+                    this.model.GetPlayer().LocateX += 5;
+            }
+                
             if (this.view.GetKeyPress().IsDownDown == true)
-                this.model.GetPlayer().LocateY += 5;
+            {
+                InteractionObjects helperWithInteration = new InteractionObjects(view.Location, view.Width, view.Height);
+                Point pointSubject = new Point(model.GetPlayer().LocateX + view.Location.X, model.GetPlayer().LocateY + view.Location.Y + 5);
+                int widthSubject = model.GetPlayer().GetImagePlayer().Width;
+                int heightSubject = model.GetPlayer().GetImagePlayer().Height;
+                if (helperWithInteration.IsLocated(pointSubject, widthSubject, heightSubject) == true)
+                    this.model.GetPlayer().LocateY += 5;
+            }
+                
             if (this.view.GetKeyPress().IsDownLeft == true)
-                this.model.GetPlayer().LocateX -= 5;
-        }
+            {
+                InteractionObjects helperWithInteration = new InteractionObjects(view.Location, view.Width, view.Height);
+                Point pointSubject = new Point(model.GetPlayer().LocateX + view.Location.X - 5, model.GetPlayer().LocateY + view.Location.Y);
+                int widthSubject = model.GetPlayer().GetImagePlayer().Width;
+                int heightSubject = model.GetPlayer().GetImagePlayer().Height;
+                if (helperWithInteration.IsLocated(pointSubject, widthSubject, heightSubject) == true)
+                    this.model.GetPlayer().LocateX -= 5;
+            }
+            
 
+        }
+        public void StartTask(bool isDownF)
+        {
+            if (this.view.GetKeyPress().IsDownF == true)
+            {
+                this.taskController = new TaskController(new Tasks.TaskView(), new TaskModel());
+                this.taskController.GetTaskView().ShowDialog();
+                this.taskController.GetTaskView().Hide();
+                this.view.GetKeyPress().IsDownF = false;
+            }
+        }
         public GameModel GetGameModel()
         {
             return this.model;

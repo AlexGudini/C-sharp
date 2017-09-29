@@ -11,32 +11,14 @@ namespace Idoctor
     {
         Up, Right, Down, Left, Stop
     }
-    public interface IPlayer
+    
+
+    public class Player: LocationObject
     {
-        Image GetImagePlayer();
-    }
-
-    public class Player: IPlayer
-    {
-        private int locateX;
-        private int locateY;
-        private Image imagePlayer = Idoctor.Properties.Resources.doc;
-        private PositionMoving positMoving = PositionMoving.Stop;
-
-        public int LocateX { get; set; }
-        public int LocateY { get; set; }
-        public PositionMoving PositMoving { get; set; }
-
-        public Player()
+        // Анимация движения
+        public Player() : base()
         {
-            this.locateX = 20;
-            this.locateY = 20;
         }
-        public Image GetImagePlayer()
-        {
-            return this.imagePlayer;
-        }
-        
 
     }
 }

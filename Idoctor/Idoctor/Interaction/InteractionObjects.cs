@@ -21,15 +21,15 @@ namespace Idoctor
         private Point leftPoint;
         private int height;
         private int width;
-        public InteractionObjects(Point leftPoint, int height, int width)
+        public InteractionObjects(Point leftPoint, int width, int height )
         {
             this.leftPoint = leftPoint;
             this.height = height;
             this.width = width;
         }
 
-        // Проверка вписан объект один в одного
-        public bool IsLocated(Point leftPointObject, int heightObj, int widthObj)
+        // Проверка вписан объект один в одного ( да - если меньший объект в больший )
+        public bool IsLocated(Point leftPointObject, int widthObj, int heightObj)
         {
             if(leftPoint.X <= leftPointObject.X && leftPoint.Y <= leftPointObject.Y)
                 if (leftPoint.X + width >= leftPointObject.X + widthObj 
@@ -39,7 +39,7 @@ namespace Idoctor
         }
 
         // Проверка пересекаются ли один объект с другим
-        public bool IsIntersection( Point leftPointObject, int heightObj, int widthObj)
+        public bool IsIntersection( Point leftPointObject, int widthObj, int heightObj)
         {
             Rectangle rectang1 = new Rectangle(leftPoint.X, leftPoint.Y, width, height);
             Rectangle rectang2 = new Rectangle(leftPointObject.X, leftPointObject.Y, widthObj, heightObj);

@@ -49,8 +49,11 @@ namespace Idoctor
             graphic.Clear(Color.Wheat);
             graphic.DrawImage(controller.GetGameModel().GetPlayer().GetImagePlayer(), 
                 new Point(controller.GetGameModel().GetPlayer().LocateX, controller.GetGameModel().GetPlayer().LocateY)) ;
+            graphic.DrawImage(controller.GetGameModel().GetPatient().GetImagePlayer(),
+               new Point(controller.GetGameModel().GetPatient().LocateX, controller.GetGameModel().GetPatient().LocateY));
+
         }
-       
+
         private void timerMoving_Tick(object sender, EventArgs e)
         {
             controller.TimerMoving();
@@ -70,6 +73,16 @@ namespace Idoctor
                 keyPress.IsDownRight = true;
             if (e.KeyCode == Keys.Down)
                 keyPress.IsDownDown = true;
+            if (e.KeyCode == Keys.F)
+            {
+                if(keyPress.IsDownF == false)
+                {
+                    keyPress.IsDownF = true;
+                    controller.StartTask(true);
+                }
+                
+            }
+                
         }
 
         private void GameView_KeyUp(object sender, KeyEventArgs e)
@@ -83,6 +96,7 @@ namespace Idoctor
                 keyPress.IsDownRight = false;
             if (e.KeyCode == Keys.Down)
                 keyPress.IsDownDown = false;
+            
         }
 
         private void GameView_KeyPress(object sender, KeyPressEventArgs e)

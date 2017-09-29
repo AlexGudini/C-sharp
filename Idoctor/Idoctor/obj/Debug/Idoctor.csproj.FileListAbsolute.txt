@@ -7,3 +7,4 @@ D:\Projects\C#\Idoctor\Idoctor\obj\Debug\Idoctor.csproj.GenerateResource.Cache
 D:\Projects\C#\Idoctor\Idoctor\obj\Debug\Idoctor.exe
 D:\Projects\C#\Idoctor\Idoctor\obj\Debug\Idoctor.pdb
 D:\Projects\C#\Idoctor\Idoctor\obj\Debug\Idoctor.GameView.resources
+D:\Projects\C#\Idoctor\Idoctor\obj\Debug\Idoctor.Tasks.TaskView.resources
