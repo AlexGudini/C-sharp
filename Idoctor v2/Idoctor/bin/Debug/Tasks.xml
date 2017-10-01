@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Task>
+	<Question>
+		<Ask> Сколько хромосом у человека?
+		</Ask>
+		<Correct> 46
+		</Correct>
+		<Mistake1> 45
+		</Mistake1>
+		<Mistake2> 48
+		</Mistake2> 
+	</Question>
+</Task>
