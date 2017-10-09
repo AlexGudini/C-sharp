@@ -1,0 +1,19 @@
+﻿Сборка начата 09.10.2017 21:47:23.
+     1>Проект "D:\OS\ConsoleApplication3\ConsoleApplication3\ConsoleApplication3.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"stdafx.h" /Fp"Release\ConsoleApplication3.pch" /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ConsoleApplication3.cpp
+         ConsoleApplication3.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\OS\ConsoleApplication3\Release\ConsoleApplication3.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\OS\ConsoleApplication3\Release\ConsoleApplication3.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\OS\ConsoleApplication3\Release\ConsoleApplication3.lib" /MACHINE:X86 /SAFESEH Release\ConsoleApplication3.obj
+         Release\stdafx.obj
+         Создание кода
+         2 of 111 functions ( 1.8%) were compiled, the rest were copied from previous compilation.
+           0 functions were new in current compilation
+           0 functions had inline decision re-evaluated but remain unchanged
+         Создание кода завершено
+         ConsoleApplication3.vcxproj -> D:\OS\ConsoleApplication3\Release\ConsoleApplication3.exe
+     1>Сборка проекта "D:\OS\ConsoleApplication3\ConsoleApplication3\ConsoleApplication3.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:02.97
